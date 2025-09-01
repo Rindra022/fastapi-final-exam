@@ -1,0 +1,21 @@
+# IntelliJ / PyCharm
+.idea/
+*.iml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*.env
+
+# Byte-compiled / packaging
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+
