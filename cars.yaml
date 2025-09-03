@@ -38,6 +38,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListCars'
+  /cars/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: le car
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+
 
 
 
