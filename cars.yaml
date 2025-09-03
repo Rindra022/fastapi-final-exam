@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: STD24018
+  description: This is a specification of STD24018
+  version: 1.0.0
+servers:
+  - url: 'https://localhost:8000'
+paths:
+  /ping:
+    get:
+      responses:
+        '200':
+          description: "Pong"
+          content:
+            text/plain:
+              schema:
+                type: string
+  /cars:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListCars'
+      responses:
+        201:
+          description: nouvelle liste crée
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCars'
+
+
+
+components:
+  schemas:
+    Car:
+      type: object
+      properties:
+        id:
+          type: string
+        brand:
+          type: string
+        model:
+          type: string
+        characteristics :
+          type: object
+          properties:
+            max_speed:
+              type: integer
+              format: int64
+            max_fuel_capacity:
+              type: integer
+              format: int64
+    ListCars:
+      type: array
+      items:
+        $ref: '#/components/schemas/Car'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
