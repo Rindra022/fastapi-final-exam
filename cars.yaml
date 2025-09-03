@@ -30,6 +30,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListCars'
+    get:
+      responses:
+        200:
+          description: La liste des cars
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCars'
 
 
 
