@@ -30,3 +30,10 @@ def create_cars(car_payload: List[car]):
         car_as_json.append(c.model_dump())
     return JSONResponse(content=car_as_json, status_code=201, media_type="application/json")
 
+@app.get("/cars")
+def read_cars():
+    car_as_json = []
+    for s in car_store:
+        car_as_json.append(s.model_dump())
+    return JSONResponse(content=car_as_json, status_code=200, media_type="application/json")
+
